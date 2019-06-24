@@ -1,6 +1,6 @@
 import React from 'react';
 import {Router, Route, Switch} from 'react-router-dom'
-// import Header from './Header'
+import Header from './Header'
 import PropertyCreate from './properties/PropertyCreate'
 import PropertyEdit from './properties/PropertyEdit'
 import PropertyDelete from './properties/PropertyDelete'
@@ -14,7 +14,7 @@ const App =()=>{
 
       <Router history={history}>
         <div>
-          {/* <Header/> */}
+          <Header/>
           <Switch>
             <Route path="/" exact component={PropertiesList}/>
             <Route path="/properties/new" exact component={PropertyCreate}/>
