@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import {Link} from 'react-router-dom'
 import {fetchProperties} from '../actions'
-import GoogleMap from './GoogleMap'
+import MyMap from './MyMap'
 
  class Landing extends Component {
  componentDidMount(){
@@ -23,7 +23,7 @@ import GoogleMap from './GoogleMap'
      if(this.props.isSignedIn){
        return(
          <div>
-           <GoogleMap/>
+           <MyMap/>
            {this.renderCreate()}
          </div>
 
@@ -31,8 +31,8 @@ import GoogleMap from './GoogleMap'
      }
        return(
          <div>
-           <GoogleApiWrapper/>
-           <p>Login to list your property</p>
+           <MyMap/>
+           <div>Login to list your property</div>
          </div>
        )
      }
