@@ -12,15 +12,15 @@
       "address": "1200 Main St Apt 2310, Dallas, TX 75202",
       "name": "Jon Doe",
       "asking_price": "$330,000",
-      "description": "downtown apartment, close to work ",
+      "description": "downtown apartment, close to work, far from schools.",
       "userId": "108777825617328158464",
       "id": 2
     },
     {
-      "address": "11338 Hillcrest Rd, Dallas, TX 75230",
-      "name": "Location Guy",
+      "name": "Jonny Doe",
       "asking_price": "$423,500",
-      "description": "Close to uptown, and everything you want",
+      "address": "11338 Hillcrest Rd, Dallas, TX 75230",
+      "description": "Close to everything and too expensive",
       "userId": "108777825617328158464",
       "id": 3
     }

@@ -5,7 +5,8 @@ import {SIGN_IN,
    CREATE_PROPERTY,
    FETCH_PROPERTIES,
    FETCH_PROPERTY,
-   EDIT_PROPERTY
+   EDIT_PROPERTY,
+   DELETE_PROPERTY
  } from './types'
 
 export const signIn = (userId)=>{
@@ -41,7 +42,12 @@ export const fetchProperty=(id)=> async dispatch=>{
   dispatch({type: FETCH_PROPERTY, payload: response.data})
 }
 export const editProperty=(id, formValues)=> async dispatch=>{
-  const response = await properties.patch(`/streams/${id}`, formValues)
+  const response = await properties.patch(`/properties/${id}`, formValues)
   dispatch({type: EDIT_PROPERTY, payload: response.data})
+  history.push('/')
+}
+export const deleteProperty =(id)=> async dispatch=>{
+  await properties.delete(`/properties/${id}`)
+  dispatch({type: DELETE_PROPERTY, payload: id})
   history.push('/')
 }
