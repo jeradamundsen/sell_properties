@@ -9,7 +9,7 @@ const Header =()=>{
         Posh Real Estate
       </Link>
       <div className="right menu">
-        <Link to="/" className="item">
+        <Link to="/properties/mylist" className="item">
           All Properties
         </Link>
         <Link to="/"><GoogleAuth/>
