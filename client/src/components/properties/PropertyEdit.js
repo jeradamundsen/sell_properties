@@ -19,7 +19,7 @@ class PropertyEdit extends Component {
     return(
       <div>
         <h3>Edit your property listing</h3>
-        <PropertiesForm initialValues={_.pick(this.props.properties, 'address','name','asking_price','description')} onSubmit={this.onSubmit}/>
+        <PropertiesForm initialValues={_.pick(this.props.properties, 'address','latitude','longitude','name','asking_price','description')} onSubmit={this.onSubmit}/>
       </div>
     )
   }

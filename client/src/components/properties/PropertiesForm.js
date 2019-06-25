@@ -36,6 +36,8 @@ class PropertiesForm extends PureComponent{
   return (
     <form className="ui form error" onSubmit={this.props.handleSubmit(this.onSubmit)}>
         <Field name="address" component={this.renderInput} label="enter address"/>
+        <Field name="latitude" component={this.renderInput} label="latitude, leave black if unknown"/>
+          <Field name="longitude" component={this.renderInput} label="longitude, leave blank if unknown"/>
         <Field name="name" component={this.renderInput} label="enter name"/>
         <Field name="asking_price" component={this.renderInput} label="enter asking price"/>
         <Field name="description" component={this.renderInput} label="enter property description"/>

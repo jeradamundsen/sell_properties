@@ -1,5 +1,5 @@
 import React, { PureComponent, createRef } from 'react';
-import Geosuggest from 'react-geosuggest'
+
 import {
   withGoogleMap,
   GoogleMap,

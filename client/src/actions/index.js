@@ -30,7 +30,7 @@ export const propertyCreate =formValues => async (dispatch, getState)=>{
     payload: response.data
   })
 
-  history.push('/properties/geosuggest')
+  history.push('/')
 }
 export const fetchProperties = () => async dispatch => {
   const response = await properties.get('/properties')

@@ -23,6 +23,22 @@
       "description": "Close to everything and too expensive",
       "userId": "108777825617328158464",
       "id": 3
+    },
+    {
+      "address": "901 E. 8475 S",
+      "name": "Jerad Amunden",
+      "asking_price": "450,000",
+      "description": "cool house",
+      "userId": "108777825617328158464",
+      "id": 4
+    },
+    {
+      "address": "901 E. 8475 S",
+      "name": "Jerad Amunden",
+      "asking_price": "450000",
+      "description": "cool",
+      "userId": "108777825617328158464",
+      "id": 5
     }
   ]
 }
