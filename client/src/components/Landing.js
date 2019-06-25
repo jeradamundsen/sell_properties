@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+
 import { connect } from 'react-redux'
 import {Link} from 'react-router-dom'
 import {fetchProperties} from '../actions'
+import GoogleMap from './GoogleMap'
 
  class Landing extends Component {
  componentDidMount(){
@@ -21,9 +23,7 @@ import {fetchProperties} from '../actions'
      if(this.props.isSignedIn){
        return(
          <div>
-           <h2 className="ui right floated header">Floated Content</h2>
-           A Big Map
-           <div className="ui clearing divider"></div>
+           <GoogleMap/>
            {this.renderCreate()}
          </div>
 
@@ -31,8 +31,7 @@ import {fetchProperties} from '../actions'
      }
        return(
          <div>
-           <h2 className="ui right floated header">Floated Content</h2>
-           <div className="ui clearing divider"></div>
+           <GoogleApiWrapper/>
            <p>Login to list your property</p>
          </div>
        )
