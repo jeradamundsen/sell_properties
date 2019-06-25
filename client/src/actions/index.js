@@ -2,7 +2,10 @@ import properties from '../apis/properties'
 import history from '../history'
 import {SIGN_IN,
    SIGN_OUT,
-   CREATE_PROPERTY
+   CREATE_PROPERTY,
+   FETCH_PROPERTIES,
+   FETCH_PROPERTY,
+   EDIT_PROPERTY
  } from './types'
 
 export const signIn = (userId)=>{
@@ -26,5 +29,19 @@ export const propertyCreate =formValues => async (dispatch, getState)=>{
     payload: response.data
   })
 
+  history.push('/')
+}
+export const fetchProperties = () => async dispatch => {
+  const response = await properties.get('/properties')
+
+  dispatch({type: FETCH_PROPERTIES, payload: response.data})
+}
+export const fetchProperty=(id)=> async dispatch=>{
+  const response = await properties.get(`/properties/${id}`)
+  dispatch({type: FETCH_PROPERTY, payload: response.data})
+}
+export const editProperty=(id, formValues)=> async dispatch=>{
+  const response = await properties.patch(`/streams/${id}`, formValues)
+  dispatch({type: EDIT_PROPERTY, payload: response.data})
   history.push('/')
 }

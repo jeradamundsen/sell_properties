@@ -1,21 +1,32 @@
-import React, { Component } from 'react';
+import _ from 'lodash'
+import React, {Component} from 'react'
+import {connect} from 'react-redux'
+import {fetchProperty, editProperty} from '../../actions'
+import PropertiesForm from './PropertiesForm'
 
-
- class PropertyEdit extends Component {
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-
-    };
+class PropertyEdit extends Component {
+  componentDidMount(){
+    this.props.fetchProperty(this.props.match.params.id)
   }
+  onSubmit=(formValues)=>{
+   this.props.editProperty(this.props.match.params.id, formValues)
+  }
+  render(){
 
-  render() {
-    return (
-      <div>My Edit Component</div>
-    );
+      if(!this.props.properties){
+        return <div>Loading...</div>
+      }
+    return(
+      <div>
+        <h3>Edit your property listing</h3>
+        <PropertiesForm initialValues={_.pick(this.props.properties, 'address','name','asking_price','description')} onSubmit={this.onSubmit}/>
+      </div>
+    )
   }
 
 }
-export default PropertyEdit
+const mapStateToProps = (state, ownProps)=>{
+
+  return {properties: state.properties[ownProps.match.params.id]}
+}
+export default connect(mapStateToProps, {fetchProperty, editProperty}) (PropertyEdit)

@@ -6,7 +6,7 @@ import PropertiesForm from './PropertiesForm'
 class PropertyCreate extends Component{
 
   onSubmit= formValues=>{
-    this.props.streamCreate(formValues)
+    this.props.propertyCreate(formValues)
   }
 
   render(){
