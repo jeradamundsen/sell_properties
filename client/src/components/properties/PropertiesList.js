@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// import GoogleMaps from '../GoogleMaps'
 
 
  class PropertiesList extends Component {
@@ -13,7 +14,10 @@ import React, { Component } from 'react';
 
   render() {
     return (
-      <div>My List Component</div>
+      <div>
+        My List Component
+        {/* <GoogleMaps/> */}
+      </div>
     );
   }
 

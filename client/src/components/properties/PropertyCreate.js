@@ -1,21 +1,24 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import {propertyCreate} from '../../actions'
+import PropertiesForm from './PropertiesForm'
 
+class PropertyCreate extends Component{
 
- class PropertyCreate extends Component {
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-
-    };
+  onSubmit= formValues=>{
+    this.props.streamCreate(formValues)
   }
 
-  render() {
-    return (
-      <div>My Create Component</div>
-    );
-  }
+  render(){
+  return (
+    <div>
+      <h3>Add Your Property</h3>
+      <PropertiesForm onSubmit={this.onSubmit}/>
+    </div>
 
+  )
 }
-export default PropertyCreate
+}
+
+export default connect(
+  null, {propertyCreate})(PropertyCreate)
