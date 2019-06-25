@@ -1,41 +1,31 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React, { PureComponent, createRef } from 'react';
+import Geosuggest from 'react-geosuggest'
+import {
+  withGoogleMap,
+  GoogleMap,
+  Marker,
+} from "react-google-maps";
 
-class MyMap extends React.Component{
-  constructor(props){
-    super()
-    this.mapRef=React.createRef()
-  }
-  componentDidMount(){
-    this.createPortal()
-  }
-  createPortal(){
-    return ReactDOM.createPortal(
-      <div>
-        <div>Look at the cool map!!!</div>
-      </div>,
-      document.querySelector('#map')
-    )
-  }
-  componentDidUpdate(){
-    this.createGoogleMap()
-  }
+const MapWithAMarker = withGoogleMap(props =>
+  <GoogleMap
+    defaultZoom={8}
+    defaultCenter={{ lat: -34.397, lng: 150.644 }}
+  >
+    <Marker
+      position={{ lat: -34.397, lng: 150.644 }}
+    />
+  </GoogleMap>
+);
 
-  createGoogleMap =()=>{
-    new window.google.maps.Map(this.googleMapRef.current, {
-      zoom: 16,
-      center: {
-        lat: 32.776665,
-        lng: -96.796989
-      },
-      disableDefaultUI: true,
-    })
 
-}
+class MyMap extends PureComponent{
 render(){
   return(
     <div>
-      <map ref={this.mapRef} style={{width:'100%', height:'400px'}}/>
+<MapWithAMarker
+  containerElement={<div style={{ height: `400px` }} />}
+  mapElement={<div style={{ height: `100%` }} />}
+/>
     </div>
   )
 }

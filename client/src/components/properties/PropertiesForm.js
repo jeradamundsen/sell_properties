@@ -1,9 +1,9 @@
-import React, {Component} from 'react'
+import React, {PureComponent} from 'react'
 import { Field, reduxForm } from 'redux-form'
-
+import Geosuggest from 'react-geosuggest'
 // import streamForm from './StreamForm'
 
-class PropertiesForm extends Component{
+class PropertiesForm extends PureComponent{
   renderError({error,touched}){
     if(touched && error){
       return(

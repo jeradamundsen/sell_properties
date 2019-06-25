@@ -22,7 +22,8 @@ import MyMap from './MyMap'
    renderContent(){
      if(this.props.isSignedIn){
        return(
-         <div>
+         <div  style={{height: '100%'}}>
+           <h2>Real Estate For Sale</h2>
            <MyMap/>
            {this.renderCreate()}
          </div>
@@ -30,10 +31,13 @@ import MyMap from './MyMap'
        )
      }
        return(
-         <div>
-           <MyMap/>
-           <div>Login to list your property</div>
+         <div style={{height: '100%'}}>
+           <h2>Real Estate For Sale</h2>
+           <MyMap lat={32.776665} lng={-96.796989}/>
+           <div>
+             <div>Sign In With Google to list your property</div>
          </div>
+       </div>
        )
      }
 
